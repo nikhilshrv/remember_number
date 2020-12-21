@@ -5,6 +5,7 @@ export class RememberNumber {
 
     rememberNumber(number: number) {
         this.numbers[number] = true;
+        return true;
     }
 
     forgetNumber(number: number) {
