@@ -20,3 +20,13 @@ test("should be able to forget a number", () => {
     rememberNumber.forgetNumber(400001);
     expect(rememberNumber.checkIfNumberExists(400001)).toBe(false);
 });
+
+test("should not be able to remember a number larger than 2000000", () => {
+    expect(rememberNumber.rememberNumber(2000010)).toBe(false);
+    expect(rememberNumber.rememberNumber(3000000)).toBe(false);
+});
+
+test("should not be able to remember a number lesser than 1", () => {
+    expect(rememberNumber.rememberNumber(0)).toBe(false);
+    expect(rememberNumber.rememberNumber(-10)).toBe(false);
+});
